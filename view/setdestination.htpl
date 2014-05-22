@@ -1,0 +1,76 @@
+{%include commonhead.htpl}
+<body>
+<style>.dropdown {width:164px;}</style>
+	<div id="container">
+		<div id="bgwrap">
+			<div id="primary_left">
+				<div id="logo">
+					<a href="/" title="data2db"><img src="images/logo.png" alt=""></a>
+				</div>
+				<!-- logo end -->
+				<div id="menu">
+					<!-- navigation menu -->
+					{%leftbar "set_destination"}
+				</div>
+				<!-- navigation menu end -->
+			</div>
+			<!-- sidebar end -->
+			<div id="primary_right">
+				<div class="inner" style="min-width:800px;">
+					<div class="notification info" style="cursor: auto;">
+						<div class="text">
+							<p>
+								<strong>Tips</strong>在这里可以对导入的字段进行合并和拆分处理
+							</p>
+						</div>
+					</div>
+					<fieldset class="insert_box">
+						<legend>{_old_source}</legend>
+						<div class="input_box"><div>目标表名<input type="text" /></div>
+						<div>&nbsp;</div>
+							<table class="normal tablesorter">
+								<thead>
+									<tr>
+										<th class="header">&nbsp;</th>
+										<th class="header">原始数据</th>
+										<th class="header">目标数据库字段名</th>
+										<th class="header">插入该数据</th>
+									</tr>
+								</thead>
+								<tbody>
+										<list name="cols1" id="vo">
+									<tr class="odd">
+										<td>第{$vo.idx}列</td>
+										<td>{$vo.data}</td>
+										<td><input type="text" /></td>
+										<td><input type="checkbox" value="$@{$vo.idx}@"/></td>
+									</tr>
+										</list>
+								</tbody>
+							</table>
+					</div>
+					</fieldset>
+					<fieldset>
+						<legend>{_adjust_source}</legend>
+						<input type="button" id="div_btn" style="margin: 15px 15px;float:left;" onclick="addmore(this);"  value="{_continue_add}" />
+						<input type="button" style="margin: 15px 15px;float:left;" onclick="previewSetDestination();"  value="{_preview}" />
+						<br clear="all"/>
+					</fieldset>
+					<fieldset>
+						<legend>{_sql_text}</legend>
+						<div id="preview_box"></div>
+						<form action="?action=main&method=export"  method="post">
+							<input type="submit" style="margin: 15px 0px;float:left;display:none" id="next_btn"  value="{_next}" />
+						</form>
+					</fieldset>
+					<br clear="both"/>
+				</div>
+				<!-- inner -->
+			</div>
+			<!-- primary_right -->
+		</div>
+		<!-- bgwrap -->
+	</div>
+	<!-- container -->
+	<script type='text/javascript' src='js/core-setdestination.js'></script>
+{%include commonfoot.htpl}

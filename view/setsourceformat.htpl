@@ -1,0 +1,113 @@
+{%include commonhead.htpl}
+<body>
+	<style>
+.dropdown {
+	width: 164px;
+}
+</style>
+	<div id="container">
+		<div id="bgwrap">
+			<div id="primary_left">
+				<div id="logo">
+					<a href="/" title="data2db"><img src="images/logo.png" alt="">
+					</a>
+				</div>
+				<!-- logo end -->
+				<div id="menu">
+					<!-- navigation menu -->
+					{%leftbar "set_source_format"}
+				</div>
+				<!-- navigation menu end -->
+			</div>
+			<!-- sidebar end -->
+
+			<div id="primary_right">
+				<div class="inner" style="min-width: 800px;">
+					<div class="notification info" style="cursor: auto;">
+						<div class="text">
+							<p>
+								<strong>Tips</strong>设置数据格式，excel会自动设置。其他请按您数据文件的格式来设置。 
+							</p>
+						</div>
+					</div>
+					<fieldset style="float: left; width: 300px;">
+						<legend>设置源格式</legend>
+						<div>
+							行分隔符&nbsp;&nbsp;&nbsp;<select id="line_det_sel" class="dropdown">
+								<option value="">每一行数据分隔符号</option>
+								<option value="\r\n">回车符(\r\n)</option>
+								<option value="\n">换行符(\n)</option>
+								<option value=" ">空格( )</option>
+								<option value="\t">制表符(\t)</option>
+								<option value='o'>其他</option>
+							</select><input type="text" style="display: none" value="\n"
+								name="line_det" id="line_det_val" />
+						</div>
+						<br />
+						<div>
+							字段分界符&nbsp;<select id="row_det_sel" class="dropdown">
+								<option value="">选择字段分隔符号</option>
+								<option value=",">逗号(,)</option>
+								<option value=" ">空格( )</option>
+								<option value="\t">制表符(\t)</option>
+								<option value='o'>其他</option>
+							</select><input type="text" style="display: none" name="row_det"
+								id="row_det_val" />
+						</div>
+						<br />
+						<div>
+							字段环绕符&nbsp;<select id="enclosure_det_sel" class="dropdown">
+								<option value="">选择字段环绕符号</option>
+								<option value="！@#">无()</option>
+								<option value="'">单引号(')</option>
+								<option value='"'>双引号(")</option>
+								<option value='o'>其他</option>
+							</select><input type="text" style="display: none" name="enclosure_det"
+								id="enclosure_det_val" />
+						</div>
+						<br />
+						<div>
+							文件编码&nbsp;&nbsp;&nbsp;<select id="encode" class="dropdown">
+								<option value="utf8">UTF8</option>
+								<option value="gbk">GB2312/GBK</option>
+							</select>
+						</div>
+						<br />
+						<div>
+							<label><input type="checkbox" name="skip_head"
+								id="skip_head">{_ignore_head}</label>
+						</div>
+						<br /> <input type="submit"
+							style="margin: 15px 0px; float: right" id="preview_btn"
+							value="{_preview}" />
+					</fieldset>
+					<fieldset style="float: left; margin-left: 0px; min-width: 400px">
+						<legend>{_preview}</legend>
+						<div id="preview_box"></div>
+						<form action="?action=main&method=adjustSource" method="post">
+							<input type="submit"
+								style="margin: 15px 0px; float: left; display: none"
+								id="next_btn" value="{_next}" />
+						</form>
+					</fieldset>
+					<br clear="both" />
+				</div>
+				<!-- inner -->
+			</div>
+			<!-- primary_right -->
+		</div>
+		<!-- bgwrap -->
+	</div>
+	<!-- container -->
+	<script type='text/javascript' src='js/core-setsourceformat.js'></script>
+	<script>
+		$(document).ready(function() {
+			$("#line_det_sel").val('{$line_det}');
+			$("#line_det_val").val('{$line_det}');
+			$('#row_det_sel').val('{$row_det}');
+			$('#row_det_val').val('{$row_det}');
+			$('#enclosure_det_sel').val('{$enclosure_det}');
+			$('#enclosure_det_val').val('{$enclosure_det}');
+		});
+	</script>
+	{%include commonfoot.htpl}

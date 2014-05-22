@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 左边栏数据项 -->
+<leftbar>
+	<enty>
+		<lang>upload_datafile</lang>
+		<url>?action=main&amp;method=uploadDatafile</url>
+		<imgurl>images/icons/small_icons_3/media.png</imgurl>
+	</enty>
+	<enty>
+		<lang>set_source_format</lang>
+		<url>?action=main&amp;method=setSourceFormat</url>
+		<imgurl>images/icons/small_icons_3/notes.png</imgurl>
+	</enty>
+	<enty>
+		<lang>adjust_source</lang>
+		<url>?action=main&amp;method=adjustSource</url>
+		<imgurl>images/icons/small_icons_3/posts.png</imgurl>
+	</enty>
+	<enty>
+		<lang>set_destination</lang>
+		<url>?action=main&amp;method=setDestination</url>
+		<imgurl>images/icons/dashboard/81.png</imgurl>
+	</enty>
+	<enty>
+		<lang>download_file</lang>
+		<url>?action=main&amp;method=</url>
+		<imgurl>images/icons/dashboard/2.png</imgurl>
+	</enty>
+</leftbar>

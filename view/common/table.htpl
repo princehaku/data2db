@@ -1,0 +1,25 @@
+<div>{$msg}</div>
+<table class="normal tablesorter">
+	<thead>
+		<tr>
+			<th class="header">&nbsp;</th>
+			<list name="head" id="vo">
+			<th class="header">第{$vo}列</th>
+			</list>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd">
+			<td>第1行</td>
+			<list name="rows1" id="vo">
+			<td>{$vo}</td>
+			</list>
+		</tr>
+		<tr class="odd">
+			<td>第2行</td>
+			<list name="rows2" id="vo">
+			<td>{$vo}</td>
+			</list>
+		</tr>
+	</tbody>
+</table>

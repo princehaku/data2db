@@ -1,0 +1,50 @@
+{%include commonhead.htpl}
+<link type="text/css" href="css/jquery-ui-1.8.14.custom.css" rel="stylesheet" />
+<body>
+<style>.dropdown {width:164px;}</style>
+	<div id="container">
+		<div id="bgwrap">
+			<div id="primary_left">
+				<div id="logo">
+					<a href="/" title="data2db"><img src="images/logo.png" alt=""></a>
+				</div>
+				<!-- logo end -->
+				<div id="menu">
+					<!-- navigation menu -->
+					{%leftbar "adjust_source"}
+				</div>
+				<!-- navigation menu end -->
+			</div>
+			<!-- sidebar end -->
+
+			<div id="primary_right">
+				<div class="inner" style="min-width:800px;">
+					<div class="notification info" style="cursor: auto;">
+						<div class="text">
+							<p>
+								<strong>Tips</strong>在这里可以对导入的字段进行合并和拆分处理
+							</p>
+						</div>
+					</div>
+					<fieldset>
+						<legend>{_old_source}</legend>
+						<div class="preview_box">{%include common/table.htpl}</div>
+                        <div class="adjust_box">
+                            <div class="adjust">
+		                        <input type="button" class="div_btn" style="margin: 15px 15px;float:left;" onclick="addDivide(this);"  value="{_add_divide}" />
+		                        <input type="button" class="com_btn"  style="margin: 15px 15px;float:left;" onclick="addCombine(this);"  value="{_add_combine}" />
+		                        <input type="button" class="next_btn" style="margin: 15px 15px;float:left;" onclick="previewAdjust(this);"  value="{_next}" />
+	                        </div>
+	                    </div>
+                        <br clear="all"/>
+					</fieldset>
+				</div>
+				<!-- inner -->
+			</div>
+			<!-- primary_right -->
+		</div>
+		<!-- bgwrap -->
+	</div>
+	<!-- container -->
+	<script type='text/javascript' src='js/core-adjustsource.js'></script>
+{%include commonfoot.htpl}
